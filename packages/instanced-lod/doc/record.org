@@ -1,0 +1,1741 @@
+refer to:
+https://www.hightopo.com/demos/index.html -> 2019 -> 仓储货架
+
+
+
+* DONE build scene by old models
+
+arcball
+
+
+
+
+
+* DONE download and update models
+
+一个房间
+
+一个大柜子
+
+两排抽屉
+
+一幅画
+
+
+
+
+
+
+* DONE change camera's far to 10000, near to 0.1
+
+* TODO add picking(hard coding)
+
+pick 柜子
+
+
+* TODO show outline when pick
+
+
+# * TODO add camera articulated animation(hard coding)
+
+# move camera to focus 柜子 when pick 柜子
+
+
+
+* TODO add 抽屉 动画
+
+when pick 抽屉, show it open animation
+
+
+
+
+* TODO add dom(2d ui)
+
+when pick 抽屉 and after open animation, show dom
+
+TODO different data for each 抽屉
+
+
+
+# * TODO add 3d ui(billboard)
+
+# when pick 抽屉 and after open animation, show 3d ui(billboard)
+
+
+
+* TODO when close dom, show close animation
+
+
+
+
+# * TODO data binding
+
+# TODO when picking 抽屉, get id
+
+# TODO when picking 抽屉, get description
+
+
+
+
+# * TODO more: show 3d ui(billboard or not billboard)
+
+
+* TODO refactor: split scripts
+
+
+* TODO show to user
+
+feedback:
+
+- size error
+- can't work in mobile
+
+
+
+
+* TODO use three.js+antd+antd charts + Scene.glb to draw
+
+TODO build and pass project(only render ui)
+import three
+
+TODO load Scene.glb
+
+
+TODO add AmbientLight to scene
+
+TODO add Orbit camera
+
+TODO run test: render scene
+    TODO fix:
+    matrix error
+    camera need adjust
+
+
+TODO rethink script!
+
+
+TODO add scripts
+
+TODO render with outline
+    TODO fix:
+        can't pick
+
+
+
+TODO update color
+    # wall's metalness, roughness
+    direction light->direction,intensity
+
+
+TODO handle ui
+
+
+TODO play go in animation
+
+
+
+TODO handle resize
+
+
+TODO refactor
+
+TODO refactor:abstract
+
+
+TODO pass run test:
+demo in pc
+demo in mobile
+
+
+# * TODO optimize dev-server:not loading Scene.glb again
+
+
+
+* DONE fix: click page not trigger pick event
+click page not trigger pick event
+
+
+
+* DONE update page position: use screen coordinate
+
+
+* DONE add Sprite(billboard) demo
+
+refer to:
+https://juejin.cn/post/7107223446999793695
+
+
+
+
+TODO run test:
+draw 1号柜子 uppon the cabinet
+scale
+not scale
+
+
+* DONE perf: add instance optimize to draw multiple cabinets
+
+TODO fix:
+    fix world
+    fix first is Mesh
+
+
+TODO run test:
+draw 1000 cabinets
+update labels
+    only mesh not visible, label still visible
+fix pick:
+    only select one
+    top parent
+1 cabinet animation work
+    update object
+    update instance's matrix
+        update not work
+
+
+
+
+TODO perf test: test performance
+    perf: if matrix not update, not send to gpu
+        # why camera move 
+
+
+# TODO fix Scene.glb:
+# add 10 cloned cabinets
+
+
+
+
+TODO refactor: extract InstanceMesh
+
+
+* DONE add stats
+
+* DONE handle resize
+
+* TODO scene switch
+
+** DONE switch park to one warehouse
+TODO switch scene directly
+    # double click to enter scene
+
+    update Pass's camera
+
+
+TODO click button(Nav) to enter
+
+TODO click button(Nav) to back
+
+
+TODO refactor: extract SceneManager
+
+
+
+TODO pass run test:
+    controls
+    outline error
+    reset animation when switch
+        extract initWhenImportScene
+        reimport scene when switch
+        handle dispose:
+            dispose scene
+            # stop all animation
+            remove scene's animation
+            off events
+            reset ui
+
+
+TODO update EffectComposer
+
+
+** DONE refactor layer, ui
+
+ui -> logic -> engine
+
+
+router to jump
+
+judge current scene to show nav
+
+
+Scene's canvas to be absolute z-index:-1
+
+
+extact logic, scene layer
+
+
+Modal to on, off event
+
+
+
+TODO pass run test
+    modal not show
+
+
+
+# ** TODO refactor invoke current scene (switch)
+
+
+** DONE improve park scene
+
+TODO change ground color
+
+TODO add label
+
+
+
+TODO outline type
+
+TODO floor percent
+
+
+* DONE use redux
+
+
+* DONE refactor Animtion
+
+* DONE fix: can't go out when play go in animation
+
+
+TODO pass run test
+
+
+
+* DONE update demo
+
+TODO test 1000 perf
+
+
+TODO update warehouse1 scene:
+remain one cabinet
+
+TODO first scene is warehouse
+
+
+TODO run test in wechat pc
+
+TODO run test in mobile
+
+
+# * TODO @ma to check
+
+
+
+* DONE improve scene manage
+
+** DONE add warehouse2 scene
+so can enter warehouse1, warehouse2
+
+
+** DONE perf: defer load warehouse scene when first enter
+
+TODO show loading
+
+TODO load it and dispose other scenes
+
+
+
+TODO fix:
+not show loading
+
+
+
+* DONE refactor: extract abstract lib for data twins app
+
+
+
+
+
+* DONE add daping ui
+
+        # "@ant-design/charts": "^1.4.2",
+
+datav + echarts + scss
+
+TODO show layout(top, left, right)
+
+TODO can act on canvas 
+
+TODO screen match
+
+
+TODO park scene add
+
+TODO use scss
+
+TODO show scene 3d
+
+TODO adjust nav
+
+
+TODO warehouse scene add
+
+
+
+# TODO improve css
+# background-color
+
+
+* DONE fix resize for orbit control
+
+
+* DONE canvas remove position, z-index
+
+# * TODO update Modal.tsx->chart
+
+
+# * TODO why slow?
+
+# * TODO fix multiple three.js?
+
+
+* DONE update demo
+
+
+
+# * TODO arcball add pointer lock
+
+
+# * TODO add 第一人称 走路 漫游
+
+# TODO use FirstPersonControl
+
+# TODO add gravity
+
+
+# TODO update mobile:
+#     TODO add virtural gamepad
+#     TODO add virtural button
+
+
+* TODO add robot skin animation in warehouse scene
+
+* TODO add 第三人称 走路 漫游
+
+show scene
+
+not remove resources
+
+
+event
+
+相机的照射的方向，应永远保持是人物的 w 方向。可以参考原神、塞尔达等。
+
+人物正脸朝向问题，即人物需要跟随运动方向旋转。
+
+TODO fix:
+so fast
+end face
+
+
+
+# gravity
+
+
+
+animation
+
+
+TODO fix:
+idle wrong
+not play run
+handle dispose
+
+
+
+collision with wall, cabinets:
+    not collision
+
+    # use OctreeHelper to visual
+
+    can't pick:
+    animation not work:
+        set outline in Cabinet
+        Pick: fix remove top parent
+
+    update modles(2, park, .arraybuffer)
+
+
+    add debug mode:
+        show octree helper
+        show capsulte
+
+    TODO fix "girl move still towards cabinet mayby lift and go by!" bug
+
+    perf: too slow
+        cache width,height
+        judge set size
+
+    # reduce stop shake 
+
+    # adjust capsulte size
+
+    handle dispose:
+        collision ones
+        debug ones
+
+
+
+
+
+
+
+
+# TODO improve camera initial set:
+# camera.position.set(0, 6, 15) // 重新设置相机的位置
+# controls.target = girl.position // 使轨道控制器围绕 girl
+#     set by bounding sphere
+
+
+TODO extract ThirdPersonControls
+
+# TODO extract Collision
+
+
+TODO remain two camera mode: orbit and third in warehouse scene
+    switch to oribit(dispose girl)
+    switch to third(add girl)
+
+        # move camera logic from girl to warehouse scene
+
+    add select ui
+        adjust position
+        reset target,keyState
+        reset default cameraType
+
+
+    TODO refactor: update park scene
+
+
+# TODO update girl inital position
+
+* DONE fix pick second cabinet
+
+# TODO enable camera,direction light, ray caster 's layers
+TODO enable camera, ray caster 's layers
+TODO set all visible Object3Ds to layer1(still set .visible)
+TODO set all unVisible Object3Ds(e.g. girl, capsule, capsule mesh) to layer2(still set .visible)
+
+
+
+
+
+
+* DONE perf: switch scene not load resources agin!
+
+TODO fix Nav.tsx
+
+
+
+
+* TODO mobile
+
+TODO 横屏
+
+TODO add virtual control in mobile
+
+
+
+TODO camera type select ui move up 2 rem
+
+
+* TODO update demo to test env
+
+
+
+* TODO 全屏/隐藏title
+
+可调用微信js sdk -> https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#43
+
+refer to:
+https://juejin.cn/post/7125695547893088263
+https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#1
+
+* TODO 横屏
+
+开启微信横屏模式：
+我-》通用-》开启横屏模式
+
+开启自动旋转
+
+
+
+
+* DONE add virtual control in mobile
+
+TODO joystick 
+
+handle dispose
+
+add wrapper:not effect select; not affect when in left
+only show when show girl
+direction wrong
+dispose:switch to park
+pan, zoom
+
+    // 0 代表没有前后 1表示前 -1表示后
+    // TODO support move to arbitrary direction
+
+# TODO direction buttons:
+# triangle geometry + transparent + pointdown event
+
+enableZoom = false
+
+
+TODO run test in mobile
+
+
+* DONE change pick event to bind click event
+
+
+* DONE solve fps drop
+
+# if isDebug, not set pixel ratio
+
+# App->init, loop multiple times?
+
+
+solve Profiling Overhead
+
+* TODO build models
+
+用csg建模：右侧柜子、抽屉的两个拉口（两个长方体叠加），一个把手（椭圆叠加），//一个钥匙孔和下面的（叠加），//两个侧面方形片（csg，金属材质）
+
+用csg建模：铁轨、网、其它柜子
+
+
+** TODO use csg to build cabinet with hole
+
+
+** TODO use geometries to build drawer
+
+TODO build
+
+TODO merge them to one geometry with a material
+
+
+** TODO enhance drawer with widgets
+
+
+** TODO add to one cabinet
+
+
+
+
+
+** TODO clone all cabinets in right side
+
+PC:35
+mobile:5
+
+** TODO finish demo
+
+TODO finish
+
+TODO run test
+
+TODO perf test:
+test in pc
+test in mobile
+
+
+
+
+** TODO instance drawer
+
+PC:41
+mobile: 58
+
+** TODO finish demo
+
+TODO finish
+
+TODO run test
+
+TODO perf test:
+test in pc
+test in mobile
+
+
+# *** TODO perf: one cabinet's draws is one group, cull groups in octree
+
+
+
+** DONE update data for one cabinet
+
+*** TODO update shape
+
+update drawer
+
+update body
+
+add drawer to body
+
+*** TODO improve render effect
+TODO adjust material, light
+
+add ground
+
+use point light
+
+add shadow only once(for body)
+
+add aa
+    TODO renderer = new THREE.WebGLRenderer( { antialias: true } );
+    TODO open msaa
+
+    TODO use taa
+
+
+TODO perf test:
+test in pc
+test in mobile
+
+
+*** TODO update shape
+
+update drawer
+
+enhance drawer with widgets
+
+update body
+上缝隙 4 上4块 中缝隙 5 下4块 下缝隙 13 低 5
+左侧、右侧缝隙12
+
+10 drawers in each block
+
+长：12+12+3*5+120*4=519
+39+480=519
+
+宽：94
+
+高：4+13+5+21*11 = 275
+
+
+add drawer to body
+
+
+*** TODO update size
+
+
+** DONE render all cabinets in right side
+
+** TODO extract config data
+
+** DONE update label
+
+** DONE update picking
+
+not layer for instance, but later for sourse
+    add Pickable Layer
+
+** DONE update player go animation
+
+# in cabinet 1
+
+pick any drawer, it go out
+
+
+TODO fix:
+not show
+should not all
+
+should only play one(judge any is go in or go out and go in finish -> any is go out finish)
+
+
+not init
+
+when play:
+if(not playing){
+create tweens, add to state, update, remove when complete
+}
+
+when dispose, remove all added tweens
+
+
+** DONE update update instance
+
+** DONE fix Event->_bindAllDomEventsForConvertDomEventToCustomEvent in pc
+
+** DONE fix ThirdPersonControls->initWhenUse: judge isMobile
+
+# ** TODO update collision
+
+** DONE update girl
+update size
+
+increase speed
+
+** DONE fix: pick first pick girl
+id the same! 
+
+because multiple three.js instance!
+
+** DONE fix: can't show xie direction animation
+
+** DONE fix: click body not play drawer's animation
+
+** DONE improve render
+
+*** TODO change to direction light
+
+*** TODO drawer has gap
+
+
+** DONE refactor: rename sceneIndex to sceneNumber
+
+# ** TODO fix: park scene can't pick warehouse
+
+** DONE perf: girl collision with cabinet too slow
+TODO should only check with whole cabinet, not its children!
+    use CabinetBody to build octree
+
+** DONE fix: not show ui in mobile
+
+joystick affect pointertap state?
+
+
+
+** DONE fix: second enter warehouse scene: can't trigger go out animation
+
+
+** DONE fix: in mobile: change to hengping->change to shuping->back to park: camera wrong
+
+need resize?
+
+
+# ** TODO only girl receive dynamic shadow
+
+
+
+** DONE clik cabinet, use ortho  to look
+TODO current camera change to ortho
+    current control
+    update camera/control
+    resize
+
+TODO use trackball controls
+    set noRoll = true
+
+
+TODO bind pick event
+
+TODO hidden other ones
+
+TODO not update girl(by judge mode)
+
+TODO update shadowmap once
+
+TODO make picked drawer red
+    # set outline
+    setColorAt
+
+
+
+TODO add button to restore
+    show other ones
+    update shadowmap once
+    restore color
+    restore camera
+
+
+TODO run test
+
+TODO fix:
+    # not hidden
+    #     handle instance
+    # not set red
+    # remove body after exit 
+    use trackball
+        # update camera
+        # look front face
+        affect zoom by orbit
+        # handle roll
+    park scene's orbit controls
+
+
+
+
+
+
+
+
+//TODO camera fade in/out animation
+
+
+
+# TODO 正视 only when use oribit controls
+
+
+
+# ** TODO can click arbitrary cabinet to look
+
+
+** DONE fix: in operate cabinet mode->enter park scene: camera wrong
+
+** DONE remove park scene(remove nav)
+
+** DONE fix: enter warehouse twice: exit button disappear
+
+** DONE adjust orbit controls
+
+
+** DONE fix: 1 cabinet show back when camera far
+
+msaa not work?
+when distance far, 锯齿明显
+
+# TODO fix antialias
+#     msaa not work?
+#     when distance far, 锯齿明显
+
+z fighting
+
+
+solution
+1.set logarithmicDepthBuffer to true
+refer to:
+https://stackoverflow.com/questions/40328722/how-can-i-solve-z-fighting-using-three-js
+
+but is cause fps drop from 60fps to 24fps!
+
+logarithmicDepthBuffer - whether to use a logarithmic depth buffer. It may be necessary to use this if dealing with huge differences in scale in a single scene. Note that this setting uses gl_FragDepth if available which disables the Early Fragment Test optimization and can cause a decrease in performance. Default is false. See the camera / logarithmicdepthbuffer example.
+
+
+2.increase camera's near from 0.1 to 1
+
+refer to:
+https://discourse.threejs.org/t/two-mesh-are-too-close-to-cause-surface-blinking/3580/4
+
+** DONE fix: when enter mode, hide box2
+
+** DONE fix: when exit, should remain girl's transform
+
+** DONE fix: when go out, not show other ui
+
+** DONE fix: use orbit->enter->exit 
+
+
+** DONE fix: 2 cabinet not show ui when go out finish
+
+** DONE fix: drawer's color not the same as body!
+
+
+
+** DONE adjust label in mobile
+
+** DONE update demo
+
+update test
+
+update public demo
+
+
+** DONE use geometries to handler
+
+const geometry = new THREE.CylinderGeometry( 5, 5, 20, 32 );
+		const material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+		const cylinder = new THREE.Mesh( geometry, material );
+		scene.add( cylinder );
+
+** DONE add to one cabinet
+
+
+
+** DONE use geometries to rail
+
+
+
+** DONE add left side cabinets
+TODO add nest
+
+TODO add cabinet
+
+
+
+
+
+** DONE update label
+
+get cabinet number
+
+
+
+** DONE add wall, door
+
+
+
+** DONE fix shadow bug
+
+
+# ** TODO fix: Nav: not show current scene nav button
+
+
+** DONE fix: use thrid->use orbit: orbit's target is third's girl!
+
+
+** DONE perf test in mobile
+
+** DONE change to double click to enter mode
+
+rewrite Pick event(single, double click):
+pick
+enter
+
+** DONE add warehouse2
+
+TODO add cabinets
+
+TODO wall,ground use wood texture(wrap: repeat)
+
+
+
+
+** DONE update data
+
+*** DONE improve render effect
+
+TODO update cabinet's color, roughness, metalness
+
+TODO make drawer's color nearly the same as body
+
+# TODO use downloaded pbr material for cabinet
+
+
+
+*** DONE update shape
+
+*** DONE add more rails
+
+*** DONE update size
+
+*** DONE finish warehouse2
+
+
+** DONE update size
+
+TODO warehouse
+
+TODO cabinets
+
+
+
+
+
+
+
+# * TODO perf: instance: one drawer only has one instance mesh matrix even if it has serval children
+
+# TODO test in windows
+
+
+
+# * TODO update demo
+
+
+* DONE fix: girl collision bug
+
+* DONE fix: warehouse2: girl init transform different than warehouse1
+
+* DONE fix: switch warehouse: collision error
+
+* DONE diff warehouse scene has diff camera
+
+
+* DONE fix: should refresh ui when switch scene
+e.g. SwitchCamera
+
+# * TODO fix: switch camera may not close
+
+
+* DONE fix: "key up two keys in the same time may only trigger one keyup"
+
+* TODO fix: should render after girl load finish; should dispose after hidden current scene finish; 
+
+TODO load scene
+    # show when girl render
+
+
+
+TODO switch scene index
+
+
+* DONE warehouse2: not enter mode
+
+* DONE update Modal: show drawer's number
+
+
+
+
+
+* TODO run test to check all
+
+TODO use Box1 instead of Box2
+    move to right
+
+
+TODO fix
+    Modal->show
+    SwitchCamera can't choose easy
+    
+
+TODO in mobile:
+    # show girl too slow
+    load resource:
+        should show "加载场景中" between load and show scene
+    # switch scene:
+    #     should show "加载场景中" between load and show scene
+
+    after load finish, 提示一次微信用户横屏，给出方法
+
+    change to chinese(SwitchCamera)
+
+
+
+    should show "加载场景中" between load and show scene(switch scene number)
+
+    label go down
+
+test in mobile
+
+
+
+test by fcy
+
+
+
+* TODONE update demo
+TODO set first scene is park scene
+# TODO set camera type to orbit
+
+
+* DONE publish to @ma
+
+
+
+
+
+* DONE improve
+
+** DONE Modal should can't click other to close
+
+** DONE hide Box1
+
+** DONE Nav
+
+
+* DONE refactor: extract Octree
+
+* DONE refactor: extract DirectionLight(helper)
+
+# use ShadowMapViewer to show shadowmap in debug
+
+refer to:
+webgl_shadowmap_viewer
+
+* DONE refactor: extract BuildModel(handle isDebug)
+
+# * TODO add camera helper
+
+# refer to shadows-directional-light-with-camera-helper
+
+
+* DONE refactor: extract BufferGeometryUtils.mergeGeometries
+
+
+
+
+
+
+* DONE add render debug tool
+
+refer to:
+https://discourse.threejs.org/t/where-can-i-see-the-number-of-draw-calls-per-frame/4311
+https://github.com/jeromeetienne/threex.rendererstats
+https://discourse.threejs.org/t/how-can-i-optimise-my-three-js-rendering/42251
+https://discourse.threejs.org/t/how-can-i-optimise-my-three-js-rendering/42251
+https://github.com/Fyrestar/THREE.DrawCallInspector
+https://discourse.threejs.org/t/material-draw-calls-reducer/29211
+
+
+* TODO improve
+
+但是整体太粗糙，人物视角不知道怎么移动，柜子模型太粗糙，材质和颜色都不对，地板材质也不对，地砖效果没出来，手柄模型也太粗糙。因为不知道视角怎么移动，没法判断门口架子情况。
+
+
+** TODO use pbr
+
+TODO use blender to make pbr material resources
+    refer to:
+    https://www.google.com.hk/search?q=blender%E6%9D%90%E8%B4%A8%E6%95%99%E7%A8%8B&newwindow=1&sca_esv=2c9a6e3237d0d3ab&sxsrf=ACQVn0-RuheU99mbSh6JXkXqxfloNcKYCA%3A1711710133597&ei=tZ8GZvyLJMrBvr0P3MiQwAE&oq=blender+%E5%88%B6%E4%BD%9Cpbr&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWJsZW5kZXIg5Yi25L2ccGJyKgIIADIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwAzIKEAAYRxjWBBiwA0iKElAAWABwAXgBkAEAmAEAoAEAqgEAuAEByAEAmAIBoAIFmAMAiAYBkAYDkgcBMaAHAA&sclient=gws-wiz-serp
+
+# *** TODO generate common cabinet material without map
+
+# export?
+
+# *** TODO build drawer geometry
+
+# *** TODO drawer get ao map to make edge darker
+
+# *** TODO drawer get normal map to show mouth
+
+
+# *** TODO build ground geometry, add texture
+
+
+# *** TODO generate common handler, rail material（银色）
+
+*** TODO build drawer by artist
+
+*** TODO update cabinet's material by drawer's material
+
+*** TODO handler,rail use metal银
+
+*** DONE fix
+
+
+collision
+instance cull 
+    rotate 
+
+enter mode
+
+
+*** DONE ground add texture
+
+
+*** DONE use RoomEnvironment as environment map(remove lights, not show shadow)
+
+
+TODO generate only once
+
+
+*** TODO trackball use perspective camera?
+
+
+*** TODO add shadow
+
+*** TODO set normalBias to reduce first cabinet's shadow acne
+directionalLight.shadow.bias = 0.05 // 平面
+directionalLight.shadow.normalBias = 0.05 // 圆形表面，缩小受影响的网格，使其不会在自身上投射阴影
+
+# ** TODO update cabinet right side
+
+# ** TODO update ground 
+
+# ** TODO add another joystick to control view
+
+
+** DONE when first use third person camera, give tip to mention "人物视角不知道怎么移动"
+
+text + images
+
+TODO store flag to indexdb to avoid show again when refresh and next login app!
+
+
+** TODO fix tip duplicate
+
+** TODO change tile
+
+
+** TODO change tip key to test
+
+** TODO close production
+
+** TODO update demo
+
+
+** TODO @ma
+
+
+
+* TODO use blender to generate GoIn/GoOut keyframe animation
+
+
+
+# * TODO perf: use octree with instance for frustum cull
+* DONE perf: use bvh with instance for frustum cull
+
+TODO how three.js implement frustum cull?
+
+TODO implement
+
+refer to:
+https://www.google.com/search?q=cull+instanced+draw&newwindow=1&sca_esv=425230d1963d53d6&sxsrf=ACQVn09smGqVO0PdrJ2J7xUmGoOioBskrA%3A1711063006275&ei=3r_8ZaOoELqgseMPu-WgyAU&ved=0ahUKEwijj7W1voaFAxU6UGwGHbsyCFkQ4dUDCBA&uact=5&oq=cull+instanced+draw&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2N1bGwgaW5zdGFuY2VkIGRyYXcyCBAAGIAEGKIESJMMUK4DWKsJcAJ4AZABAJgBrgGgAY8FqgEDMC40uAEDyAEA-AEBmAIEoALLAsICChAAGEcY1gQYsAPCAggQABgIGAcYHpgDAIgGAZAGBJIHAzIuMqAH0wM&sclient=gws-wiz-serp
+
+
+# if enter mode{
+# no cull for animated drawers of cabinet, cull for other cabinets as static
+# } 
+# else{
+TODO cull for all as static
+# }
+    hidden
+        with scale 0
+        with visible = false
+    color
+    animation
+    pick bug
+
+TODO work with three-mesh-bvh
+
+
+
+TODO update OperateCabinetMode->_hiddenOtherCabinetsAndGirl
+
+* TODO benchmark test:
+
+
+
+* TODO perf: enable Occlusion Culling
+
+wait for three.js to implement:
+https://github.com/mrdoob/three.js/pull/15450
+
+
+* TODO benchmark test:
+cull+instance
+10 instanced meshs(each count == 5000) + 1000w triangles
+
+in pc(rtx)
+in mobile
+
+
+
+* DONE fix: when loading, not show nav
+
+* DONE perf: use instance+lod
+
+TODO implement draft
+
+    # updateAllInstances
+    # cabinet1->play drawer's animation
+
+TODO pass bdd test
+
+TODO pass run test:
+drawer with level1
+    size
+        levels should use default transform
+    culling
+    picking in mode
+    # test shadow
+drawer with level1,2
+    use tree to test instead of drawer.glb
+        not show lod
+        culing
+            not use bvh, use linear search instead
+            update Instance->setVisible
+
+            TODO pass run test
+                fix isInFrustum
+                why show, but not call?
+                fix culling
+                fix middle disappear
+            
+            # perf: if show,hide not change, not update culling
+            perf: if attr not change(not swap), not update it
+
+
+
+
+        picking in mode
+
+
+TODO handle level1 has multiple meshes, level2 has one mesh
+    1.for lod, limit
+        pass run test
+    2.for not lod, not limit
+        test tree2
+            culling
+            pick
+    # refactor _convertAllXxx
+
+# test tree1, tree2
+
+TODO restore bdd test
+
+TODO convert check is
+
+TODO when create mesh lod, check:
+last one's distance should be +InFinity
+
+
+//TODO add hysteresis
+
+
+
+
+# * TODO benchmark test:
+
+# use tree to test
+
+
+
+* DONE perf: use instance+animate
+TODO use InstancedMesh2->checkDynamicFrustum
+
+    not lod: 
+        cull bug
+
+
+
+* DONE restore drawer model
+
+TODO fix:
+    enter mode:
+        hide
+        pick
+            should pick all
+            hide should not pick 
+
+
+* DONE fix: dispose instance state when dispose scene
+
+# * TODO perf: improve collision
+# TODO use bvh instead of octree
+
+# refer to:
+# https://github.com/gkjohnson/three-mesh-bvh
+# https://discourse.threejs.org/t/three-mesh-bvh-a-plugin-for-fast-geometry-raycasting-and-spatial-queries/26394/20
+# https://gkjohnson.github.io/three-mesh-bvh/example/bundle/characterMovement.html
+# https://gkjohnson.github.io/three-mesh-bvh/example/bundle/physics.html
+
+
+
+
+
+
+# * TODO perf: pick use bvh
+
+# refer to:
+# https://github.com/gkjohnson/three-mesh-bvh
+
+
+# TODO perf test
+# in pc
+# in mobile
+
+
+
+# * TODO perf: improve csg
+
+# use three-bvh-csg instead
+
+# refer to:
+# https://github.com/gkjohnson/three-bvh-csg
+
+
+
+
+
+
+
+
+* DONE rewrite Park Scene based on Warehouse Scene
+TODO rewrite
+
+TODO fix: park scene's camera: operate not work
+
+TODO fix: park scene's camera: affect by warehouse oribit camera
+
+
+
+
+* TODO update park scene's model(change to city scene: e.g. add path, more building, trees, ...)
+refer to https://gitee.com/303711888/threejs-park
+
+
+model can generated by Meshy
+    refer to:
+        https://www.bilibili.com/video/BV176421w7sS/?vd_source=9fcdb7c5d92e95429d4dd9af0380937b
+        https://app.meshy.ai/zh/discover
+
+
+
+# TODO tree,building use lod, random set initial transform
+
+# TODO tree1 -> middle not use lod
+
+# TODO tree3 use lod
+TODO add tree1 lod
+
+TODO add static plane
+
+
+TODO run test
+
+TODO perf: optimize cpu
+    lod
+
+
+TODO add animated boxes(group1) not use lod lod
+
+
+TODO perf: optimize cpu
+    not lod
+
+TODO fix girl->animation
+
+# TODO add animated cars use lod
+# TODO add animated boxes(group2) not use lod
+
+# TODO add another cars not use lod
+
+TODO add directional light
+
+# TODO add lod building
+
+TODO run test
+
+
+
+TODO add pick
+
+
+** TODO benchmark test
+
+TODO perf: optimize cpu
+
+
+TODO test in pc
+
+TODO test in mobile
+
+
+* TODO park scene add daytime/night switch
+
+Procedural Sky
+Physically Based Sky
+
+refer to:
+https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.high-definition@10.4/manual/Override-Procedural-Sky.html
+https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.high-definition@10.4/manual/Override-Physically-Based-Sky.html
+
+
+
+TODO add skybox
+
+
+
+
+
+* TODO perf: enable shadow and use csm to improve direction light shadow
+
+
+
+* TODO perf:solve "Can't find variable: WebGL2RenderingContext" in safari浏览器
+
+
+
+* TODO perf:solve "ios init too slow"
+
+TODO find hot
+
+
+
+
+* TODO build park scene in center zone
+
+other zone build by model
+
+
+refer to:
+https://blog.csdn.net/softshow1026/article/details/135710621
+
+TODO build scene in blender, export a single glb(small numbers)
+    instances use cloned ones
+
+
+
+TODO expand to big numbers
+
+
+
+* TODO support night light
+
+TODO use derfer shading?
+
+TODO use emission?
+
+TODO use light bake?
+refer to:
+https://study.163.com/course/introduction.htm?courseId=1213043809#/courseDetail?tab=1
+
+
+
+
+* TODO how to build light map?
+
+
+
+
+
+* TODO improve render effect
+
+
+** TODO only girl receive dynamic shadow
+
+refer to:
+https://juejin.cn/post/6844903505807802381
+
+** TODO improve pbr
+
+refer to:
+https://juejin.cn/post/7313242116771676186
+https://juejin.cn/post/7330052230472417295
+
+
+** TODO add ssao
+
+
+# TODO renderer = new THREE.WebGLRenderer( { antialias: true } );
+
+# TODO open msaa
+
+# TODO add static shadow
+
+** TODO fix point light bug: show shadow Acne when orbit's distance is >=200 from point light
+
+use csm?
+
+adjust bias not solve!
+
+refer to:
+https://www.zhihu.com/question/49090321
+
+
+* TODO show bigscreen ui in park scene
+
+
+
+
+
+* TODO more optimize in mobile
+
+refer to:
+https://blog.uwa4d.com/archives/TechSharing_109.html
+
+https://discourse.threejs.org/t/how-can-i-optimise-my-three-js-rendering/42251
+
+https://discourse.threejs.org/t/material-draw-calls-reducer/29211/22
+
+https://discourse.threejs.org/t/three-drawcallinspector-visualize-draw-call-cost-experimental/22503
+
+
+
+
+
+
+
+
+* TODO girl animation add blending
+
+
+** TODO girl add jump
+TODO add jump animation
+TODO update position
+TODO add gravity
+
+
+*** TODO continue fix "girl move still towards cabinet mayby lift and go by!" bug
+TODO should judge isOnFloor(and judge is jump) and add gravity
+
+
+
+* TODO add camera move along line
+
+
+
+
+
+
+
+* TODO add vehicle move animation in park scene
+
+
+
+
+# # * TODO 交互: pick 1号柜（左侧）时展示柜子：先拉开该柜子（轨道）（移动动画）->正视柜子（相机动画）->拉开抽屉（抽屉变成红色）
+# * TODO 交互: pick 1号柜（左侧）时展示柜子：隐藏其它柜子->正视1号柜子（相机动画）->拉开抽屉（抽屉变成红色）->弹出 Modal；关闭Modal后：关闭抽屉->抽屉颜色恢复->显示其余柜子->恢复相机为展示前的相机（相机动画）
+
+# TODO 相机使用 Ortho
+
+# TODO 正视 only when use oribit controls
+
+
+
+
+
+* TODO OutlinePass use layer version
+TODO set its layer to control topOne!
+
+
+
+* TODO extract config.json
+isDebug
+
+* TODO extract model's transform, color in model.json
+
+
+
+
+* TODO finish public demo
+
+TODO update demo
+
+TODO announce
+    write artible
+    record video
+
+
+
+# * TODO @ma: give needed materials to models
+
+
+# need get picture, size?
+
+# TODO get picture in front, side, back
+
+
+# refer to:
+# https://www.tuguan.net/doc/scene-editor/createmodel/modeling/
+
+
+# * TODO need test: models
+
+# only need drawer model?
+
+# build cabinet body by compose cubes?
+
+# drawer use instanced draw?
+
+
+
+
+
+
+
+
+
+
+* TODO improve scene manage
+
+
+** TODO switch scene with animation
+
+
+** TODO if memory is nearly full, dispose unused scene to releas
+
+
+** TODO perf test
+
+
+
+
+
+
+** TODO switch warehouse to one cabinet: show in modal
+
+
+

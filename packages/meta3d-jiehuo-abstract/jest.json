@@ -1,0 +1,28 @@
+{
+  "preset": "ts-jest",
+  "automock": false,
+  "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.(ts|tsx)?$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
+  },
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "jsx",
+    "ts",
+    "tsx",
+    "node"
+  ],
+  "testMatch": [
+    "<rootDir>/test/step-definitions/**/*.steps.ts"
+  ],
+  "transformIgnorePatterns": [
+    "/mine"
+  ],
+  "setupFilesAfterEnv": [
+    "<rootDir>/test/helper/jest/specHelper.js"
+  ],
+  "notify": false,
+  "verbose": true
+}

@@ -1,0 +1,28 @@
+{
+	"name": "digitaltwin-instanced-lod",
+	"private": true,
+	"license": "",
+	"author": "Meta3D",
+	"scripts": {
+		"clean": "lerna clean",
+		"bootstrap": "lerna bootstrap"
+	},
+	"workspaces": [
+		"packages/*"
+	],
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-customizable"
+		}
+	},
+	"devDependencies": {
+		"lerna": "^4.0.0"
+	},
+	"resolutions": {
+        "three": "0.159.0",
+		"jest-environment-jsdom": "^26.0.1",
+		"jest": "^26.4.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+	}
+}

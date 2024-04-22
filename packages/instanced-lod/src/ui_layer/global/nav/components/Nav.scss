@@ -1,0 +1,13 @@
+#ui_nav {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0rem;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: row;
+
+    .tab {
+        // margin-right:0.1rem;
+    }
+}
