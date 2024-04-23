@@ -4,7 +4,7 @@
 ```js
 npm run bootstrap
 
-cd packages/3dwarehouse_1/
+cd packages/instanced-lod/
 
 npm run webpack:dev-server
 ```
