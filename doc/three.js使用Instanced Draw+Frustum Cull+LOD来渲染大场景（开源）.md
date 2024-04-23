@@ -21,21 +21,21 @@
 
 渲染大场景所需要的技术点包括：
 
-- Instanced Draw
+- Instanced Draw   
 一个Draw Call批量渲染物体，物体可以有不同的Transform、Color
-- Frustum Cull
+- Frustum Cull   
 剔除视椎体外的物体
-- Occlusion Cull
+- Occlusion Cull   
 剔除被遮挡的物体（WebGL1不支持）
-- LOD
+- LOD   
 根据物体到相机的距离，显示不同Level的物体。越远的越粗糙，越近的越细致
-- GPU Driven Pipeline
+- GPU Driven Pipeline   
 把前几个优化都放到GPU中来做，并且物体可以有更多差异（需要WebGPU）
-- Space Partition
+- Space Partition   
 使用Octree、BVH、BSP等加速结构来划分场景，在Cull、碰撞检测、Ray Picking等操作时查询加速结构而不是遍历所有物体，从而提高性能
-- Multi Thread Render
+- Multi Thread Render   
 开一个渲染线程来渲染
-- AssetBundle、Stream Load
+- AssetBundle、Stream Load   
 划分为多个场景包，动态、流式加载
 
 
@@ -44,8 +44,7 @@
 ![image](https://img2024.cnblogs.com/blog/419321/202404/419321-20240423113644044-1790268787.gif)
 
 
-场景总三角面数是千万级，总物体数量是1万（PC端）/5000（移动端）
-动态物体数量是800（PC端）/400（移动端）
+场景总三角面数是千万级，总物体数量是1万（PC端）/5000（移动端），动态物体数量是800（PC端）/400（移动端）
 
 其中，树使用了Instanced Draw+LOD，白色立方体使用了Instanced Draw
 
@@ -60,7 +59,7 @@
 
 ## Instanced Draw 
 
-比如要将克隆的1000个Mesh改为Instanced的，则保留它们作为source，并创建一个InstancedMesh，count设为1000，写入1000个Mesh的世界矩阵；然后隐藏source，显示InstancedMesh
+比如要将克隆的1000个Mesh改为Instanced的，则保留它们作为source，并创建一个InstancedMesh，count设为1000，写入1000个Mesh的世界矩阵；然后隐藏source，显示InstancedMesh   
 之所以保留source，是因为可以用它们来做碰撞检测、Ray Picking等单个Mesh的操作
 
 
@@ -78,9 +77,8 @@
 值得注意的是要将three.js默认的对单个Object3D的frustum cull关闭（即将source的frustumCulled设为false）
 
 
-另外，我们直接遍历所有的待剔除物体来进行Fustum Cull检测，没有使用Octree等加速结构
-相关的讨论请参考：
-[Linear search vs Octree (Frustum cull)](https://gamedev.stackexchange.com/questions/30151/linear-search-vs-octree-frustum-cull)
+另外，我们直接遍历所有的待剔除物体来进行Fustum Cull检测，没有使用Octree等加速结构   
+相关的讨论请参考：[Linear search vs Octree (Frustum cull)](https://gamedev.stackexchange.com/questions/30151/linear-search-vs-octree-frustum-cull)
 
 
 ## LOD
@@ -90,11 +88,8 @@
 
 如上图所示，假设车有3个Level的LOD层级，我们希望离相机越远，显示越高的Level（Geometry、Material越简单）
 
-我们需要创建3个InstanceMesh，分别对应不同的Level，如下图所示：
+我们需要创建3个InstanceMesh，分别对应不同的Level，如下图所示：   
 ![image](https://img2024.cnblogs.com/blog/419321/202404/419321-20240423113724336-1451998520.png)
-
-![image](uploading...)
-
 
 
 
